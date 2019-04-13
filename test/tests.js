@@ -27,7 +27,7 @@ describe('Cross Origin Requests', function() {
 
   it('should allow all origins', function() {
     return assert(result, "header.access-control-allow-origin").to.equal('*');
-  });
+  });	
 });
 
 describe('Create Todo Item', function() {
@@ -142,5 +142,5 @@ function update(url, method, data) {
 
 // Resolve promise for property and return expectation
 function assert(result, prop) {
-  return expect(result).to.eventually.have.deep.property(prop)
+  return expect(result).to.eventually.have.nested.property(prop);
 }
